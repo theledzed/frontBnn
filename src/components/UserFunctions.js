@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const register = newUser => {
   return axios
-    .post("users/register", {
+    .post("/bnn-movies.herokuapp/users/register", {
       fist_name: newUser.fist_name,
       last_name: newUser.last_name,
       email: newUser.email,
@@ -16,7 +16,7 @@ export const register = newUser => {
 
 export const login = user => {
   return axios
-    .post("users/login", {
+    .post("/bnn-movies.herokuapp/users/login", {
       email: user.email,
       password: user.password
     })
@@ -31,7 +31,7 @@ export const login = user => {
 
 export const registerMovie = movie => {
   return axios
-    .post("/movies/register/movie", {
+    .post("/bnn-movies.herokuapp/movies/register/movie", {
       tittle: movie.tittle,
       director_name: movie.director_name,
       date: movie.date,
@@ -48,7 +48,7 @@ export const registerMovie = movie => {
 
 export const deleteMovie = movie => {
   return axios
-    .post("/movies/deleted/movie", {
+    .post("/bnn-movies.herokuapp/movies/deleted/movie", {
       _id: movie
     })
     .then(res => {
@@ -61,7 +61,7 @@ export const deleteMovie = movie => {
 
 export const updateMovie = movie => {
   return axios
-    .put("/movies/update/movie", {
+    .put("/bnn-movies.herokuapp/movies/update/movie", {
       tittle: movie.tittle,
       director_name: movie.director_name,
       date: movie.date,
@@ -78,7 +78,7 @@ export const updateMovie = movie => {
 
 export const moviesRegistered = movies => {
   return axios
-    .get("/movies/movie/register")
+    .get("/bnn-movies.herokuapp/movies/movie/register")
     .then(res => {
       return res.data;
     })
